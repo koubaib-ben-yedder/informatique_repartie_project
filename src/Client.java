@@ -31,7 +31,34 @@ public class Client {
 			System.out.println("-> give me your choose");
 			Scanner input = new Scanner(System.in);
 
+			String product = "";
 			String value_0 = input.nextLine();
+
+			switch (value_0) {
+
+				case "1": {
+
+					product = "cornichons";
+					break;
+				}
+				case "2": {
+					product = "safran";
+					break;
+
+				}
+
+				case "3": {
+					product = "sel";
+					break;
+
+				}
+
+				case "4": {
+					product = "poivre";
+					break;
+
+				}
+			}
 
 			value_1 = magasin_1.getPrice(value_0);
 
@@ -39,24 +66,29 @@ public class Client {
 
 			value_3 = magasin_3.getPrice(value_0);
 
+			System.out.println(value_1);
+			System.out.println(value_2);
+
+			System.out.println(value_3);
+
 			if (((value_1 > value_2) && (value_2 > value_3)) || ((value_2 > value_1) &&
 					(value_1 > value_3))) {
 
-				System.out.println("Le prix le plus bas de l ingredient " + value_0
+				System.out.println("Le prix le plus bas de l ingredient " + product
 						+ " est de " + value_3 + " et se trouve chez magasin 3.");
 			} else {
 
 				if (((value_1 > value_3) && (value_3 > value_2)) || ((value_3 > value_1) &&
 						(value_1 > value_2))) {
 
-					System.out.println("Le prix le plus bas de l ingredient " + value_0
+					System.out.println("Le prix le plus bas de l ingredient " + product
 							+ " est de " + value_2 + " et se trouve chez magasin 2.");
 				} else {
 
 					if (((value_2 > value_3) && (value_3 > value_1)) || ((value_3 > value_2) &&
 							(value_2 > value_1))) {
 
-						System.out.println("Le prix le plus bas de l ingredient " + value_0
+						System.out.println("Le prix le plus bas de l ingredient " + product
 								+ " est de " + value_1 + " et se trouve chez magasin 1.");
 					} else {
 
